@@ -7,12 +7,13 @@ echo "Enter the third value"
 read c
 echo "The Three values are : "
 echo $a $b $c
-#result1=`expr $a + $b \* $c`
-#echo "The result is : $result1 "
-#result2=`expr $a \* $b + $c`
-#echo "The result is : $result2 "
-#result3=`expr $c + $a / $b`
-#echo "The result is : $result3 "
+result1=`expr $a + $b \* $c`
+result2=`expr $a \* $b + $c`
+result3=`expr $c + $a / $b`
 result4=`expr $a % $b + $c`
-echo "The result is : $result4 "
-
+declare -A Dict
+Dict=([result1]=$result1 [result2]=$result2 [result3]=$result3 [result4]=$result4)
+for i in ${!Dict[@]}
+do
+	echo "$i  :  ${Dict[$i]}"
+done
