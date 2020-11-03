@@ -11,6 +11,8 @@ echo $a $b $c
 #echo "The result is : $result1 "
 #result2=`expr $a \* $b + $c`
 #echo "The result is : $result2 "
-result3=`expr $c + $a / $b`
-echo "The result is : $result3 "
+#result3=`expr $c + $a / $b`
+#echo "The result is : $result3 "
+result4=`expr $a % $b + $c`
+echo "The result is : $result4 "
 
