@@ -13,7 +13,6 @@ result3=`expr $c + $a / $b`
 result4=`expr $a % $b + $c`
 declare -A Dict
 Dict=([result1]=$result1 [result2]=$result2 [result3]=$result3 [result4]=$result4)
-for i in ${!Dict[@]}
-do
-	echo "$i  :  ${Dict[$i]}"
-done
+arr=("${Dict[@]}")
+echo "The results of the arithmetic operations : "
+echo ${arr[@]}
