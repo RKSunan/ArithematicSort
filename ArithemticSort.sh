@@ -16,7 +16,10 @@ Dict=([result1]=$result1 [result2]=$result2 [result3]=$result3 [result4]=$result
 declare -a arr
 arr=("${Dict[@]}")
 echo "The results of the arithmetic operations : "
-echo ${arr[@]}
-echo "Results in Decesding order : "
-n=$(printf '%s\n' "${arr[@]}" | sort -nr )
+for i in ${!Dict[@]}
+do
+echo  "$i : ${Dict[$i]}"
+done
+echo "Results in Ascending order : "
+n=$(printf '%s\n' "${arr[@]}" | sort -n )
 echo $n
